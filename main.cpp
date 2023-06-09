@@ -46,6 +46,10 @@ int main()
   #error This example expects the clang compiler
   #endif
 
+  #ifdef __GNUC__
+  #error No GCC in this example please
+  #endif
+
   const auto v = create_series(500'000);
   const auto a = sort_a(v);
   const auto b = sort_b(v);

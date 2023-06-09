@@ -46,7 +46,7 @@ int main()
   #error This example expects the clang compiler
   #endif
 
-  #ifdef __GNUC__
+  #ifdef __GNUG__
   #error No GCC in this example please
   #endif
 

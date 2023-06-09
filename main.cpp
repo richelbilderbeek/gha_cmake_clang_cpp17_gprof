@@ -47,7 +47,8 @@ int main()
   #endif
 
   #ifdef __GNUG__
-  #error No GCC in this example please
+  // __GNUG__ is defined by the clang compiler as well?
+  // #error No GCC in this example please
   #endif
 
   const auto v = create_series(500'000);

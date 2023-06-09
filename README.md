@@ -20,7 +20,6 @@ More complex builds:
 
 Equally complex builds:
 
- * Use `qmake` (instead of `CMake`): [gha_qmake_clang_cpp17_gprof](https://github.com/richelbilderbeek/gha_qmake_clang_cpp17_gprof)
  * Use `g++` (instead of `clang`): [gha_cmake_gcc_cpp17_gprof](https://github.com/richelbilderbeek/gha_cmake_gcc_cpp17_gprof)
 
 Less complex builds:

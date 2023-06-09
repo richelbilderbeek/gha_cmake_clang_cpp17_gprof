@@ -12,8 +12,6 @@ jobs:
   check_build:
     runs-on: ubuntu-latest
 
-    compiler: clang
-
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
 
@@ -22,15 +20,21 @@ jobs:
 
       - name: Set up CMake build folder for release mode, thanks https://stackoverflow.com/a/64719718
         run: cmake -B build . -DCMAKE_BUILD_TYPE=Release 
+        env:
+          CC: clang
 
       - name: Run CMake
         run: cmake --build build 
+        env:
+          CC: clang
 
       - name: Run the program
         run: ./build/gha_cmake_gcc_cpp17_gprof
 
       - name: Produce the gprof log
         run: gprof ./build/gha_cmake_gcc_cpp17_gprof > gprof.log
+        env:
+          CC: clang
 
       - name: Read the 100 top lines
         run: head gprof.log -n 100
